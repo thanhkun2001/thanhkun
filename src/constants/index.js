@@ -3,7 +3,8 @@ export const ROUTES = {
   LOGIN: '/login',
   REGISTER: '/register',
   PRODUCT_PAGE:'/products',
-  PRODUCT_DETAIL:'/products/:id'
+  PRODUCT_DETAIL:'/products/:id',
+  ADMIN:'/admin'
 };
 export const API_URL = {
     PRODUCT:'/products'

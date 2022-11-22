@@ -16,7 +16,8 @@ import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import { Button } from '@mui/material';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { ROUTES } from '../../constants';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -59,7 +60,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export default function Header() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
-
+  let isLogin = localStorage.getItem('ThanhKun21');
+  const navigate = useNavigate()
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
@@ -79,7 +81,12 @@ export default function Header() {
   const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
-
+  const handleLogout = () => {
+    localStorage.removeItem('ThanhKun21')
+   setTimeout(() => {
+    navigate(`${ROUTES.LOGIN}`)
+   },700)
+  }
   const menuId = 'primary-search-account-menu';
   const renderMenu = (
     <Menu
@@ -167,12 +174,18 @@ export default function Header() {
             <StyledInputBase placeholder="Search…" inputProps={{ 'aria-label': 'search' }} />
           </Search>
           <Box sx={{ flexGrow: 1 }} />
-          <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/login">
-            <Button color="inherit">Login</Button>
-          </NavLink>
-          <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/register">
-            <Button color="inherit">Register</Button>
-          </NavLink>
+          {isLogin ? (
+            <Button onClick={handleLogout} color='inherit'>LogOut</Button>
+          ) : (
+            <div>
+              <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/login">
+                <Button color="inherit">Login</Button>
+              </NavLink>
+              <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/register">
+                <Button color="inherit">Register</Button>
+              </NavLink>
+            </div>
+          )}
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             <IconButton size="large" aria-label="show 4 new mails" color="inherit">
               <Badge badgeContent={4} color="error">
