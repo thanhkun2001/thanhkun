@@ -1,9 +1,8 @@
-export default function getNumber(x, y) {
+export default function getDuplicate(x, y) {
   if (!Array.isArray(x) && !Array.isArray(y)) {
     return 0;
   }
   let newArray = [];
-  newArray.push(x?.filter((item) => y?.includes(item)));
+  newArray.push([...new Set(x.concat(y))]);
   return newArray;
 }
-
