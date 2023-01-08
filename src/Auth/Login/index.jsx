@@ -41,10 +41,10 @@ export default function Login() {
     } else if (data.get('password') === '') {
       window.alert('password');
     } else {
-     localStorage.setItem('ThanhKun21', data.get('email'))
+      localStorage.setItem('ThanhKun21',data.get("email") );
       setTimeout(() => {
-        navigate('/')
-      },500)
+        navigate('/');
+      }, 500);
     }
   };
   return (

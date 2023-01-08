@@ -76,6 +76,7 @@ export default function Header() {
   const handleMenuClose = () => {
     setAnchorEl(null);
     handleMobileMenuClose();
+    navigate(`${ROUTES.PROFILE}`)
   };
 
   const handleMobileMenuOpen = (event) => {
@@ -105,7 +106,6 @@ export default function Header() {
       onClose={handleMenuClose}
     >
       <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
     </Menu>
   );
 

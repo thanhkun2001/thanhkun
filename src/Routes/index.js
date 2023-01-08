@@ -1,4 +1,5 @@
 import Admin from "../Auth/Admin"
+import Profile from "../components/Profile"
 import { ROUTES } from "../constants"
 import HomePage from "../pages/HomePage"
 import ProductPage from "../pages/Products"
@@ -16,6 +17,9 @@ const publicRoutes = [
 },
 {
     path:ROUTES.ADMIN,component:Admin,layout:null
+},
+{
+    path:ROUTES.PROFILE,component:Profile
 }
 ]
 const PrivateRoutes = [

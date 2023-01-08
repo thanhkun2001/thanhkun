@@ -4,7 +4,8 @@ export const ROUTES = {
   REGISTER: '/register',
   PRODUCT_PAGE:'/products',
   PRODUCT_DETAIL:'/products/:id',
-  ADMIN:'/admin'
+  ADMIN:'/admin',
+  PROFILE:'/profile'
 };
 export const API_URL = {
     PRODUCT:'/products'
