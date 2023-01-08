@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
-import GetNumber from '../../components/GetNumber';
 import getNumber from '../../utils/helpers';
-
+import './_home.scss';
 const HomePage = () => {
   const [value, setValue] = useState('');
   const [value1, setValue1] = useState('');
@@ -22,7 +21,7 @@ const HomePage = () => {
       setResult(getNumber(arr[0], arr2[0]));
     }
   };
- 
+
   const copy = async () => {
     await navigator.clipboard.writeText(result);
     alert('Text copied');
@@ -30,48 +29,37 @@ const HomePage = () => {
 
   return (
     <>
-      <div style={{ display: 'flex', marginTop: 120, justifyContent: 'center', gap: 120 }}>
+      <div className="home">
         <div>
           <div>
-            <h3>Dàn 1</h3>
-            <span>{lengthNumber}</span>
+            <h1>Dàn 1</h1>
+            <h2>Tổng : {lengthNumber}</h2>
           </div>
-          <textarea
-            style={{ fontSize: '14px', width: '300px', height: '200px' }}
-            type="number"
-            value={value}
-            onChange={(e) => setValue(e.target.value)}
-          />
+          <textarea type="text" value={value} onChange={(e) => setValue(e.target.value)} />
         </div>
         <div>
           <div>
-            <h3>Dàn 2</h3>
-            <span>{lengthNumber2}</span>
+            <h1>Dàn 2</h1>
+            <h2>Tổng : {lengthNumber2}</h2>
           </div>
-          <textarea
-            style={{ fontSize: '14px', width: '300px', height: '200px' }}
-            type="text"
-            value={value1}
-            onChange={(e) => setValue1(e.target.value)}
-          />
+          <textarea type="text" value={value1} onChange={(e) => setValue1(e.target.value)} />
         </div>
       </div>
       <button style={{ display: 'flex', margin: 'auto', marginTop: 30 }} onClick={handleClick}>
         Thực hiện
       </button>
-      <div style={{ width: 500 }}>
+      <div className="dcm">
         <p>
-          {' '}
           {result.length > 0 ? (
             <div>
               <div>
-                <h2> {result[0].length}</h2>
-                {console.log(result[0])}
+                <h1>Kết quả</h1>
+                <h2> Tổng : {result[0].length}</h2>
               </div>
-              <div>
-                {JSON.stringify(result[0]?.join(','))}
-                <button onClick={copy}>Copy</button>
+              <div className="result">
+                <p> {JSON.stringify(result[0]?.join(','))}</p>
               </div>
+              <button onClick={copy}>Copy</button>
             </div>
           ) : (
             ''
