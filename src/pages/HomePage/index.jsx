@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import getDuplicate from '../../utils/duplicate';
 import getNumber from '../../utils/helpers';
 import getOnlyNumber from '../../utils/only';
@@ -49,6 +50,9 @@ const HomePage = () => {
   return (
     <>
       <h1 style={{ textAlign: 'center' }}>LỌC - GHÉP DÀN 2D (LOTO, ĐẶC BIỆT 2 SỐ)</h1>
+      <div style={{ textAlign: 'center' }}>
+        <Link to="/total" >Total</Link>
+      </div>
       <div className="home">
         <div>
           <div>
