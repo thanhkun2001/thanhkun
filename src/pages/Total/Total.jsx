@@ -1,6 +1,6 @@
 import { Input } from '@mui/material';
 import React, { useEffect, useState } from 'react';
-
+import './_total.scss';
 const Total = () => {
   const [point, setPoint] = useState('');
   const [exactly, setExactly] = useState('');
@@ -64,7 +64,7 @@ const Total = () => {
       <div>
         <h1>Lô 23/80</h1>
         <div>
-          <div style={{ display: 'flex', justifyContent: 'center', gap: 200 }}>
+          <div className='total' style={{ display: 'flex', justifyContent: 'center', gap: 200 }}>
             <div>
               <label style={{ marginRight: 20 }}>Điểm đánh</label>
               <input type="number" value={point} onChange={(e) => setPoint(e.target.value)} min={1} />
@@ -85,7 +85,7 @@ const Total = () => {
       <div>
         <h1>Lô 22,5/80</h1>
         <div>
-          <div style={{ display: 'flex', justifyContent: 'center', gap: 200 }}>
+          <div className='total' style={{ display: 'flex', justifyContent: 'center', gap: 200 }}>
             <div>
               <label style={{ marginRight: 20 }}>Điểm đánh</label>
               <input type="number" value={point2} onChange={(e) => setPoint2(e.target.value)} min={1} />
@@ -106,7 +106,7 @@ const Total = () => {
       <div>
         <h1>Lô 21,7/80</h1>
         <div>
-          <div style={{ display: 'flex', justifyContent: 'center', gap: 200 }}>
+          <div className='total'  style={{ display: 'flex', justifyContent: 'center', gap: 200 }}>
             <div>
               <label style={{ marginRight: 20 }}>Điểm đánh</label>
               <input type="number" value={point3} onChange={(e) => setPoint3(e.target.value)} min={1} />
@@ -126,7 +126,7 @@ const Total = () => {
       <div>
         <h1>Đề 1/90</h1>
         <div>
-          <div style={{ display: 'flex', justifyContent: 'center', gap: 200 }}>
+          <div className='total' style={{ display: 'flex', justifyContent: 'center', gap: 200 }}>
             <div>
               <label style={{ marginRight: 20 }}>Tiền đánh</label>
               <input type="number" value={point1} onChange={(e) => setPoint1(e.target.value)} min={1} />

@@ -1,0 +1,13 @@
+.total {
+  @media (max-width: 575px) {
+    gap: 20px!important;
+    flex-direction: column;
+    text-align: center;
+    label{
+        margin: 59px!important;
+    }
+    h2{
+        font-size: 1.3rem;
+    }
+  }
+}
